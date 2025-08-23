@@ -33,7 +33,7 @@ pipeline {
                 stage('Run Web Tests') {
                     steps {
                         echo "Running Web Tests"
-                        bat """
+                        sh """
                         robot --outputdir ${WEB_RESULTS} ${WEB_TESTS}
                         """
                     }
@@ -41,7 +41,7 @@ pipeline {
                 stage('Run API Tests') {
                     steps {
                         echo "Running API Tests"
-                        bat """
+                        sh """
                         mkdir ${API_RESULTS}
                         postman collection run ${API_TESTS} --reporters cli,json --reporter-json-export ${API_RESULTS}\\api_test_report.json
                         """
