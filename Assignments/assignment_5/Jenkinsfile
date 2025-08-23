@@ -22,7 +22,7 @@ pipeline {
                 echo "Installing dependencies"
                 sh """
                 ${HOME}/.venv/bin/pip3 install --quiet robotframework
-                ${HOME}}/.venv/bin/pip3 install --quiet robotframework-seleniumlibrary
+                ${HOME}/.venv/bin/pip3 install --quiet robotframework-seleniumlibrary
                 npm install -g postman-cli
                 """
             }
