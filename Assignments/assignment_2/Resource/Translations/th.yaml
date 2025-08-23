@@ -1,0 +1,7 @@
+txt_login_page_header: mock
+txt_login: mock
+txt_logout: mock 
+txt_login_into_secure_area: mock
+txt_logout_of_secure_area: mock
+txt_user_invalid: mock
+txt_pass_invalid: mock

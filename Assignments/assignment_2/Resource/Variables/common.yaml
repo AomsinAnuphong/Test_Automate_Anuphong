@@ -1,0 +1,5 @@
+5s_TIMEOUT: 5
+60s_TIMEOUT: 60
+URL: http://the-internet.herokuapp.com/login
+DEFAULT_BROWSER: chrome
+headless: False

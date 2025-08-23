@@ -1,0 +1,9 @@
+APPIUM_SERVER: http://127.0.0.1:4723
+DEVICE_NAME: Pixel 8 Pro
+PLATFORM_NAME: Android
+PLATFORM_VERSION: "14.0"
+APP_PACKAGE: com.avjindersinghsekhon.minimaltodo
+APP_ACTIVITY: com.example.avjindersinghsekhon.toodle.MainActivity
+appium_config: Resources/json/appium_config.json
+APP_PATH: Resource/app/app-release.apk
+AUTOMATION_NAME: UiAutomator2

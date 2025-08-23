@@ -1,0 +1,7 @@
+txt_login_page_header: Login Page
+txt_login: Login
+txt_logout: Logout 
+txt_login_into_secure_area: You logged into a secure area!
+txt_logout_of_secure_area: You logged out of the secure area!
+txt_user_invalid: Your username is invalid!
+txt_pass_invalid: Your password is invalid!
