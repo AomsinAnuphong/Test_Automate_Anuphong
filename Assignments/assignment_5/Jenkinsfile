@@ -23,7 +23,7 @@ pipeline {
                 sh """
                 ${HOME}/.venv/bin/pip3 install --quiet robotframework
                 ${HOME}/.venv/bin/pip3 install --quiet robotframework-seleniumlibrary
-                /opt/homebrew/bin/node /opt/homebrew/bin/npm install -g postman-cli
+                ${HOMEBREW_PREFIX}/bin/brew install postman-cli
                 """
             }
         }
@@ -43,7 +43,7 @@ pipeline {
                         echo "Running API Tests"
                         sh """
                         mkdir ${API_RESULTS}
-                        postman collection run ${API_TESTS} --reporters cli,json --reporter-json-export ${API_RESULTS}\\api_test_report.json
+                        ${HOMEBREW_PREFIX}/bin/postman collection run ${API_TESTS} --reporters cli,json --reporter-json-export ${API_RESULTS}\\api_test_report.json
                         """
                     }
                 }
