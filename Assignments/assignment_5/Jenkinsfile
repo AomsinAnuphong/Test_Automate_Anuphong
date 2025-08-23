@@ -1,0 +1,75 @@
+pipeline {
+    agent any
+
+    environment {
+        REPO_URL = 'https://github.com/AomsinAnuphong/Test_Automate_Anuphong.git'
+        WEB_TESTS = 'Assignments/assignment_2/test_login.robot'
+        API_TESTS = 'Assignments/assignment_3/Test_Automate_API.postman_collection.json'
+        WEB_RESULTS = 'Assignments/assignment_5/Results/assignment_2'
+        API_RESULTS = 'Assignments/assignment_5/Results/assignment_3'
+    }
+
+    stages {
+        stage('Checkout Code From Git') {
+            steps {
+                echo "Checking out code from ${REPO_URL}"
+                git url: "${REPO_URL}", branch: 'main', credentialsId: 'github-test-token'
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                echo "Installing dependencies"
+                bat """
+                pip install --quiet robotframework
+                pip install --quiet robotframework-seleniumlibrary
+                npm install -g postman-cli
+                """
+            }
+        }
+
+        stage('Run Tests in Parallel') {
+            parallel {
+                stage('Run Web Tests') {
+                    steps {
+                        echo "Running Web Tests"
+                        bat """
+                        robot --outputdir ${WEB_RESULTS} ${WEB_TESTS}
+                        """
+                    }
+                }
+                stage('Run API Tests') {
+                    steps {
+                        echo "Running API Tests"
+                        bat """
+                        mkdir ${API_RESULTS}
+                        postman collection run ${API_TESTS} --reporters cli,json --reporter-json-export ${API_RESULTS}\\api_test_report.json
+                        """
+                    }
+                }
+            }
+        }
+
+        stage('Publish Results') {
+            steps {
+                echo "Publishing Web Test Results"
+                robot outputDirectory: "${WEB_RESULTS}"
+
+                echo "Publishing API Test Results (as artifact)"
+                archiveArtifacts artifacts: "${API_RESULTS}/*.json", fingerprint: true
+            }
+        }
+    }
+
+    post {
+        always {
+            echo "Pipeline completed"
+        }
+        success {
+            echo "Pipeline completed successfully"
+        }
+        failure {
+            echo "Pipeline failed"
+        }
+    }
+}
