@@ -34,7 +34,7 @@ pipeline {
                     steps {
                         echo "Running Web Tests"
                         sh """
-                        robot --outputdir ${WEB_RESULTS} ${WEB_TESTS}
+                        ${HOME}/.venv/bin/robot --outputdir ${WEB_RESULTS} ${WEB_TESTS}
                         """
                     }
                 }
@@ -53,7 +53,7 @@ pipeline {
         stage('Publish Results') {
             steps {
                 echo "Publishing Web Test Results"
-                robot outputDirectory: "${WEB_RESULTS}"
+                ${HOME}/.venv/bin/robot outputDirectory: "${WEB_RESULTS}"
 
                 echo "Publishing API Test Results (as artifact)"
                 archiveArtifacts artifacts: "${API_RESULTS}/*.json", fingerprint: true
