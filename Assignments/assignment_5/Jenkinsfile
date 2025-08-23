@@ -21,8 +21,8 @@ pipeline {
             steps {
                 echo "Installing dependencies"
                 sh """
-                pip install --quiet robotframework
-                pip install --quiet robotframework-seleniumlibrary
+                ${HOME}/.venv/bin/pip3 install --quiet robotframework
+                ${HOME}}/.venv/bin/pip3 install --quiet robotframework-seleniumlibrary
                 npm install -g postman-cli
                 """
             }
