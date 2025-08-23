@@ -20,7 +20,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 echo "Installing dependencies"
-                bat """
+                sh """
                 pip install --quiet robotframework
                 pip install --quiet robotframework-seleniumlibrary
                 npm install -g postman-cli
