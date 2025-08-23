@@ -42,7 +42,7 @@ pipeline {
                     steps {
                         echo "Running API Tests"
                         sh """
-                        mkdir ${API_RESULTS}
+                        mkdir -p ${API_RESULTS}
                         /opt/homebrew/bin/postman collection run ${API_TESTS} --reporters cli,json --reporter-json-export ${API_RESULTS}\\api_test_report.json
                         """
                     }
