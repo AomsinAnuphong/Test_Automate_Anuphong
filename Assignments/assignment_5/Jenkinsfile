@@ -34,7 +34,7 @@ pipeline {
                     steps {
                         echo "Running Web Tests"
                         sh """
-                        ${HOME}/.venv/bin/robot -d ${WEB_RESULTS} -v lang:en -v headless:True ${WEB_TESTS}
+                        robot -d ${WEB_RESULTS} -v lang:en -v headless:True ${WEB_TESTS}
                         """
                     }
                 }
