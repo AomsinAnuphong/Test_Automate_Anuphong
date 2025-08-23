@@ -1,0 +1,788 @@
+{
+  "run": {
+    "meta": {
+      "collectionId": "25dfb033-1fa8-4818-8033-cf93120e52ed",
+      "collectionName": "Test_Automate_API",
+      "started": 1755936255454,
+      "completed": 1755936256308,
+      "duration": 854
+    },
+    "summary": {
+      "iterations": {
+        "executed": 1,
+        "errors": 0
+      },
+      "executedRequests": {
+        "executed": 2,
+        "errors": 0
+      },
+      "prerequestScripts": {
+        "executed": 2,
+        "errors": 0
+      },
+      "postresponseScripts": {
+        "executed": 2,
+        "errors": 0
+      },
+      "tests": {
+        "executed": 4,
+        "failed": 0,
+        "passed": 4,
+        "skipped": 0
+      },
+      "timeStats": {
+        "responseAverage": 407.5,
+        "responseMin": 255,
+        "responseMax": 560,
+        "responseStandardDeviation": 152.5
+      }
+    },
+    "executions": [
+      {
+        "iterationCount": 0,
+        "requestExecuted": {
+          "id": "db1c13df-daf2-4368-9dba-6d08aecea8bd",
+          "name": "Get user profile success",
+          "url": {
+            "protocol": "https",
+            "path": [
+              "api",
+              "users",
+              "12"
+            ],
+            "host": [
+              "reqres",
+              "in"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "headers": [
+            {
+              "key": "x-api-key",
+              "value": "reqres-free-v1"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.44.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "422421bf-c2af-41f6-8f88-fca248fe5479",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "reqres.in",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "GET"
+        },
+        "response": {
+          "id": "9c586821-7d5b-41e1-9d7f-6ac43d751f48",
+          "_details": {
+            "name": "OK",
+            "detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action.",
+            "code": 200,
+            "standardName": "OK"
+          },
+          "status": "OK",
+          "code": 200,
+          "headers": [
+            {
+              "key": "Date",
+              "value": "Sat, 23 Aug 2025 08:04:15 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Etag",
+              "value": "W/\"156-dRpOqAStViWxQQvYl7n1A1GXGFw\""
+            },
+            {
+              "key": "Nel",
+              "value": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}"
+            },
+            {
+              "key": "Ratelimit-Limit",
+              "value": "100"
+            },
+            {
+              "key": "Ratelimit-Policy",
+              "value": "100;w=60"
+            },
+            {
+              "key": "Ratelimit-Remaining",
+              "value": "90"
+            },
+            {
+              "key": "Ratelimit-Reset",
+              "value": "4"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "strict-origin-when-cross-origin"
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=1R6QSkEkCRntUKAaP4PUhNe7WSLzWAHhNetF359q3xQ%3D\\u0026sid=c4c9725f-1ab0-44d8-820f-430df2718e11\\u0026ts=1755929976\"}],\"max_age\":3600}"
+            },
+            {
+              "key": "Reporting-Endpoints",
+              "value": "heroku-nel=\"https://nel.heroku.com/reports?s=1R6QSkEkCRntUKAaP4PUhNe7WSLzWAHhNetF359q3xQ%3D&sid=c4c9725f-1ab0-44d8-820f-430df2718e11&ts=1755929976\""
+            },
+            {
+              "key": "Via",
+              "value": "1.1 heroku-router"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "X-Request-Id",
+              "value": "6dd00bf2-8a78-61cc-b882-81a8d267fb47"
+            },
+            {
+              "key": "X-Xss-Protection",
+              "value": "1; mode=block"
+            },
+            {
+              "key": "Age",
+              "value": "6279"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "max-age=14400"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "HIT"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "9739191e5f0e6017-SIN"
+            },
+            {
+              "key": "server-timing",
+              "value": "cfL4;desc=\"?proto=TCP&rtt=54598&min_rtt=46359&rtt_var=17486&sent=4&recv=6&lost=0&retrans=0&sent_bytes=2817&recv_bytes=729&delivery_rate=73094&cwnd=253&unsent_bytes=0&cid=31ed0f76b49ecd54&ts=88&x=0\""
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              100,
+              97,
+              116,
+              97,
+              34,
+              58,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              49,
+              50,
+              44,
+              34,
+              101,
+              109,
+              97,
+              105,
+              108,
+              34,
+              58,
+              34,
+              114,
+              97,
+              99,
+              104,
+              101,
+              108,
+              46,
+              104,
+              111,
+              119,
+              101,
+              108,
+              108,
+              64,
+              114,
+              101,
+              113,
+              114,
+              101,
+              115,
+              46,
+              105,
+              110,
+              34,
+              44,
+              34,
+              102,
+              105,
+              114,
+              115,
+              116,
+              95,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              82,
+              97,
+              99,
+              104,
+              101,
+              108,
+              34,
+              44,
+              34,
+              108,
+              97,
+              115,
+              116,
+              95,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              72,
+              111,
+              119,
+              101,
+              108,
+              108,
+              34,
+              44,
+              34,
+              97,
+              118,
+              97,
+              116,
+              97,
+              114,
+              34,
+              58,
+              34,
+              104,
+              116,
+              116,
+              112,
+              115,
+              58,
+              47,
+              47,
+              114,
+              101,
+              113,
+              114,
+              101,
+              115,
+              46,
+              105,
+              110,
+              47,
+              105,
+              109,
+              103,
+              47,
+              102,
+              97,
+              99,
+              101,
+              115,
+              47,
+              49,
+              50,
+              45,
+              105,
+              109,
+              97,
+              103,
+              101,
+              46,
+              106,
+              112,
+              103,
+              34,
+              125,
+              44,
+              34,
+              115,
+              117,
+              112,
+              112,
+              111,
+              114,
+              116,
+              34,
+              58,
+              123,
+              34,
+              117,
+              114,
+              108,
+              34,
+              58,
+              34,
+              104,
+              116,
+              116,
+              112,
+              115,
+              58,
+              47,
+              47,
+              99,
+              111,
+              110,
+              116,
+              101,
+              110,
+              116,
+              99,
+              97,
+              100,
+              100,
+              121,
+              46,
+              105,
+              111,
+              63,
+              117,
+              116,
+              109,
+              95,
+              115,
+              111,
+              117,
+              114,
+              99,
+              101,
+              61,
+              114,
+              101,
+              113,
+              114,
+              101,
+              115,
+              38,
+              117,
+              116,
+              109,
+              95,
+              109,
+              101,
+              100,
+              105,
+              117,
+              109,
+              61,
+              106,
+              115,
+              111,
+              110,
+              38,
+              117,
+              116,
+              109,
+              95,
+              99,
+              97,
+              109,
+              112,
+              97,
+              105,
+              103,
+              110,
+              61,
+              114,
+              101,
+              102,
+              101,
+              114,
+              114,
+              97,
+              108,
+              34,
+              44,
+              34,
+              116,
+              101,
+              120,
+              116,
+              34,
+              58,
+              34,
+              84,
+              105,
+              114,
+              101,
+              100,
+              32,
+              111,
+              102,
+              32,
+              119,
+              114,
+              105,
+              116,
+              105,
+              110,
+              103,
+              32,
+              101,
+              110,
+              100,
+              108,
+              101,
+              115,
+              115,
+              32,
+              115,
+              111,
+              99,
+              105,
+              97,
+              108,
+              32,
+              109,
+              101,
+              100,
+              105,
+              97,
+              32,
+              99,
+              111,
+              110,
+              116,
+              101,
+              110,
+              116,
+              63,
+              32,
+              76,
+              101,
+              116,
+              32,
+              67,
+              111,
+              110,
+              116,
+              101,
+              110,
+              116,
+              32,
+              67,
+              97,
+              100,
+              100,
+              121,
+              32,
+              103,
+              101,
+              110,
+              101,
+              114,
+              97,
+              116,
+              101,
+              32,
+              105,
+              116,
+              32,
+              102,
+              111,
+              114,
+              32,
+              121,
+              111,
+              117,
+              46,
+              34,
+              125,
+              125
+            ]
+          },
+          "cookies": [],
+          "responseTime": 255,
+          "responseSize": 342,
+          "downloadedBytes": 250
+        },
+        "tests": [
+          {
+            "name": "Verify response status code should be 200",
+            "status": "passed"
+          },
+          {
+            "name": "Verify response body should contain user data",
+            "status": "passed"
+          }
+        ],
+        "errors": []
+      },
+      {
+        "iterationCount": 0,
+        "requestExecuted": {
+          "id": "b8ec5c50-5cdf-4e60-b27d-8975303194c2",
+          "name": "Get user profile but user not found",
+          "url": {
+            "protocol": "https",
+            "path": [
+              "api",
+              "users",
+              "1234"
+            ],
+            "host": [
+              "reqres",
+              "in"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "headers": [
+            {
+              "key": "x-api-key",
+              "value": "reqres-free-v1"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.44.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "c9bda53f-bfef-4857-b587-8e297626460d",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "reqres.in",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "GET"
+        },
+        "response": {
+          "id": "d067efe7-0fb7-4a93-afcd-ff847de54181",
+          "_details": {
+            "name": "Not Found",
+            "detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible.",
+            "code": 404,
+            "standardName": "Not Found"
+          },
+          "status": "Not Found",
+          "code": 404,
+          "headers": [
+            {
+              "key": "Date",
+              "value": "Sat, 23 Aug 2025 08:04:16 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "2"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "9739191effbb6017-SIN"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Etag",
+              "value": "W/\"2-vyGp6PvFo4RvsFtPoIWeCReyIC8\""
+            },
+            {
+              "key": "Nel",
+              "value": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}"
+            },
+            {
+              "key": "Ratelimit-Limit",
+              "value": "100"
+            },
+            {
+              "key": "Ratelimit-Policy",
+              "value": "100;w=60"
+            },
+            {
+              "key": "Ratelimit-Remaining",
+              "value": "98"
+            },
+            {
+              "key": "Ratelimit-Reset",
+              "value": "60"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "strict-origin-when-cross-origin"
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=IsgxL6jd52wIX8iqDLy%2FZSJm%2FqMBrHUMti8qhSfikHI%3D\\u0026sid=c4c9725f-1ab0-44d8-820f-430df2718e11\\u0026ts=1755936256\"}],\"max_age\":3600}"
+            },
+            {
+              "key": "Reporting-Endpoints",
+              "value": "heroku-nel=\"https://nel.heroku.com/reports?s=IsgxL6jd52wIX8iqDLy%2FZSJm%2FqMBrHUMti8qhSfikHI%3D&sid=c4c9725f-1ab0-44d8-820f-430df2718e11&ts=1755936256\""
+            },
+            {
+              "key": "Via",
+              "value": "1.1 heroku-router"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "X-Request-Id",
+              "value": "4d1461c2-c462-5752-02e3-657ebdf11e87"
+            },
+            {
+              "key": "X-Xss-Protection",
+              "value": "1; mode=block"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "max-age=14400"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "EXPIRED"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "server-timing",
+              "value": "cfL4;desc=\"?proto=TCP&rtt=54279&min_rtt=46359&rtt_var=9426&sent=9&recv=10&lost=0&retrans=0&sent_bytes=5017&recv_bytes=1013&delivery_rate=94388&cwnd=257&unsent_bytes=0&cid=31ed0f76b49ecd54&ts=566&x=0\""
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              125
+            ]
+          },
+          "cookies": [],
+          "responseTime": 560,
+          "responseSize": 2,
+          "downloadedBytes": 2
+        },
+        "tests": [
+          {
+            "name": "Verify response status code should be 404",
+            "status": "passed"
+          },
+          {
+            "name": "Response body should be '{}'",
+            "status": "passed"
+          }
+        ],
+        "errors": []
+      }
+    ],
+    "runError": null
+  }
+}

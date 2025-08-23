@@ -1,0 +1,200 @@
+Started by user admin
+Obtained Assignments/assignment_5/Jenkinsfile from git https://github.com/AomsinAnuphong/Test_Automate_Anuphong.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /Users/anup/.jenkins/workspace/Assignment_Automate_pipeline
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential ef570e93-346f-4891-bde2-01a47348a24d
+ > git rev-parse --resolve-git-dir /Users/anup/.jenkins/workspace/Assignment_Automate_pipeline/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/AomsinAnuphong/Test_Automate_Anuphong.git # timeout=10
+Fetching upstream changes from https://github.com/AomsinAnuphong/Test_Automate_Anuphong.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.5 (Apple Git-154)'
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --force --progress -- https://github.com/AomsinAnuphong/Test_Automate_Anuphong.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision bd2629d50c617c33255ad9d257f72956e1c556db (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f bd2629d50c617c33255ad9d257f72956e1c556db # timeout=10
+Commit message: "Update Jenkinsfile"
+ > git rev-list --no-walk a493e982372896feb7cb6f9116858ead3202ecdd # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout Code From Git)
+[Pipeline] echo
+Checking out code from https://github.com/AomsinAnuphong/Test_Automate_Anuphong.git
+[Pipeline] git
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+Warning: CredentialId "github-test-token" could not be found.
+ > git rev-parse --resolve-git-dir /Users/anup/.jenkins/workspace/Assignment_Automate_pipeline/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/AomsinAnuphong/Test_Automate_Anuphong.git # timeout=10
+Fetching upstream changes from https://github.com/AomsinAnuphong/Test_Automate_Anuphong.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.5 (Apple Git-154)'
+ > git fetch --tags --force --progress -- https://github.com/AomsinAnuphong/Test_Automate_Anuphong.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision bd2629d50c617c33255ad9d257f72956e1c556db (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f bd2629d50c617c33255ad9d257f72956e1c556db # timeout=10
+ > git branch -a -v --no-abbrev # timeout=10
+ > git branch -D main # timeout=10
+ > git checkout -b main bd2629d50c617c33255ad9d257f72956e1c556db # timeout=10
+Commit message: "Update Jenkinsfile"
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Install Dependencies)
+[Pipeline] echo
+Installing dependencies
+[Pipeline] sh
++ /Users/anup/.venv/bin/pip3 install --quiet robotframework
+
+[notice] A new release of pip is available: 25.1.1 -> 25.2
+[notice] To update, run: /Users/anup/.venv/bin/python3.13 -m pip install --upgrade pip
++ /Users/anup/.venv/bin/pip3 install --quiet robotframework-seleniumlibrary
+
+[notice] A new release of pip is available: 25.1.1 -> 25.2
+[notice] To update, run: /Users/anup/.venv/bin/python3.13 -m pip install --upgrade pip
++ /opt/homebrew/bin/brew install postman-cli
+Warning: Not upgrading postman-cli, the latest version is already installed
+==> No outdated dependents to upgrade!
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Run Tests in Parallel)
+[Pipeline] parallel
+[Pipeline] { (Branch: Run Web Tests)
+[Pipeline] { (Branch: Run API Tests)
+[Pipeline] stage
+[Pipeline] { (Run Web Tests)
+[Pipeline] stage
+[Pipeline] { (Run API Tests)
+[Pipeline] echo
+Running Web Tests
+[Pipeline] sh
+[Pipeline] echo
+Running API Tests
+[Pipeline] sh
++ /Users/anup/.venv/bin/robot -d Assignments/assignment_5/Results/assignment_2 -v lang:en -v headless:True Assignments/assignment_2/test_login.robot
+==============================================================================
+Test Login                                                                    
+==============================================================================
+Login success                                                         + mkdir -p Assignments/assignment_5/Results/assignment_3
++ /opt/homebrew/bin/postman collection run Assignments/assignment_3/Test_Automate_API.postman_collection.json --reporters cli,json --reporter-json-export Assignments/assignment_5/Results/assignment_3api_test_report.json
+Running your collection...
+postman
+
+Test_Automate_API
+
+→ Get user profile success
+
+  GET https://reqres.in/api/users/12 [200 OK, 1.63 KB, 255 ms]
+  ✓  Verify response status code should be 200
+  ✓  Verify response body should contain user data
+
+→ Get user profile but user not found
+
+  GET https://reqres.in/api/users/1234 [404 Not Found, 1.37 KB, 560 ms]
+  ✓  Verify response status code should be 404
+  ✓  Response body should be '{}'
+Generating run report [json]...
+Saving run report [json]...
+Report created successfully! Saved to: /Users/anup/.jenkins/workspace/Assignment_Automate_pipeline/Assignments/assignment_5/Results/assignment_3api_test_report.json
+
+[90m┌─────────────────────────[39m[90m┬───────────────────────[39m[90m┬──────────────────────┐[39m
+[90m│[39m                         [90m│[39m              executed [90m│[39m               failed [90m│[39m
+[90m├─────────────────────────[39m[90m┼───────────────────────[39m[90m┼──────────────────────┤[39m
+[90m│[39m              iterations [90m│[39m                     1 [90m│[39m                    0 [90m│[39m
+[90m├─────────────────────────[39m[90m┼───────────────────────[39m[90m┼──────────────────────┤[39m
+[90m│[39m                requests [90m│[39m                     2 [90m│[39m                    0 [90m│[39m
+[90m├─────────────────────────[39m[90m┼───────────────────────[39m[90m┼──────────────────────┤[39m
+[90m│[39m            test-scripts [90m│[39m                     2 [90m│[39m                    0 [90m│[39m
+[90m├─────────────────────────[39m[90m┼───────────────────────[39m[90m┼──────────────────────┤[39m
+[90m│[39m      prerequest-scripts [90m│[39m                     2 [90m│[39m                    0 [90m│[39m
+[90m├─────────────────────────[39m[90m┼───────────────────────[39m[90m┼──────────────────────┤[39m
+[90m│[39m              assertions [90m│[39m                     4 [90m│[39m                    0 [90m│[39m
+[90m├─────────────────────────┴───────────────────────┴──────────────────────┤[39m
+[90m│[39m total run duration: 854 ms                                             [90m│[39m
+[90m├────────────────────────────────────────────────────────────────────────┤[39m
+[90m│[39m total data received: 252 B (approx)                                    [90m│[39m
+[90m├────────────────────────────────────────────────────────────────────────┤[39m
+[90m│[39m average response time: 407 ms [min: 255 ms, max: 560 ms, s.d.: 152 ms] [90m│[39m
+[90m└────────────────────────────────────────────────────────────────────────┘[39m
+Publishing run details to postman cloud is currently supported only for collections specified via postman collection id or collections belonging to git linked APIs
+Refer: https://go.pstmn.io/postman-cli-faq
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+| PASS |
+------------------------------------------------------------------------------
+Login failed - Password incorrect                                     | PASS |
+------------------------------------------------------------------------------
+Login failed - Username not found                                     | PASS |
+------------------------------------------------------------------------------
+Test Login                                                            | PASS |
+3 tests, 3 passed, 0 failed
+==============================================================================
+Output:  /Users/anup/.jenkins/workspace/Assignment_Automate_pipeline/Assignments/assignment_5/Results/assignment_2/output.xml
+Log:     /Users/anup/.jenkins/workspace/Assignment_Automate_pipeline/Assignments/assignment_5/Results/assignment_2/log.html
+Report:  /Users/anup/.jenkins/workspace/Assignment_Automate_pipeline/Assignments/assignment_5/Results/assignment_2/report.html
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // parallel
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Publish Results)
+[Pipeline] echo
+Publishing Web Test Results
+[Pipeline] robot
+WARNING: Unknown parameter(s) found for class type 'hudson.plugins.robot.RobotStep': outputDirectory
+Robot results publisher started...
+-Parsing output xml:
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] echo
+Pipeline completed
+[Pipeline] echo
+Pipeline failed
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Also:   org.jenkinsci.plugins.workflow.actions.ErrorAction$ErrorId: 3fddd96d-7065-4238-8504-70552ca85029
+java.lang.NullPointerException: Cannot invoke "String.startsWith(String)" because "rel" is null
+	at hudson.FilePath.isAbsolute(FilePath.java:303)
+	at hudson.FilePath.resolvePathIfRelative(FilePath.java:288)
+	at hudson.FilePath.<init>(FilePath.java:279)
+	at PluginClassLoader for robot//hudson.plugins.robot.RobotParser.parse(RobotParser.java:49)
+	at PluginClassLoader for robot//hudson.plugins.robot.RobotPublisher.parse(RobotPublisher.java:252)
+	at PluginClassLoader for robot//hudson.plugins.robot.RobotPublisher.perform(RobotPublisher.java:275)
+	at PluginClassLoader for robot//hudson.plugins.robot.RobotStepExecution.run(RobotStepExecution.java:33)
+	at PluginClassLoader for robot//hudson.plugins.robot.RobotStepExecution.run(RobotStepExecution.java:15)
+	at PluginClassLoader for workflow-step-api//org.jenkinsci.plugins.workflow.steps.SynchronousNonBlockingStepExecution.lambda$start$0(SynchronousNonBlockingStepExecution.java:49)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Finished: FAILURE

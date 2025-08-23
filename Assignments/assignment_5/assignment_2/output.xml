@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.5 on darwin)" generated="2025-08-23T15:04:15.252159" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Login" source="/Users/anup/.jenkins/workspace/Assignment_Automate_pipeline/Assignments/assignment_2/test_login.robot">
+<test id="s1-t1" name="Login success" line="5">
+<kw name="Open web url" owner="common">
+<if>
+<branch type="IF" condition="'${headless}' == 'True'">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-23T15:04:15.378878" level="INFO">Opening browser 'headlesschrome' to base url 'http://the-internet.herokuapp.com/login'.</msg>
+<arg>${url}</arg>
+<arg>headlesschrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-23T15:04:15.378617" elapsed="6.446876"/>
+</kw>
+<status status="PASS" start="2025-08-23T15:04:15.377301" elapsed="6.448558"/>
+</branch>
+<branch type="ELSE">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="NOT RUN" start="2025-08-23T15:04:21.826471" elapsed="0.000048"/>
+</kw>
+<status status="NOT RUN" start="2025-08-23T15:04:21.825987" elapsed="0.000598"/>
+</branch>
+<status status="PASS" start="2025-08-23T15:04:15.377152" elapsed="6.449479"/>
+</if>
+<arg>url=${URL}</arg>
+<status status="PASS" start="2025-08-23T15:04:15.376746" elapsed="6.450020"/>
+</kw>
+<kw name="Input username password and click login" owner="login_feature">
+<kw name="Verify if page login page load correctly" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${web_locator['txt_login_page_header']}</arg>
+<arg>timeout=${60s_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-23T15:04:21.828296" elapsed="0.025512"/>
+</kw>
+<status status="PASS" start="2025-08-23T15:04:21.828029" elapsed="0.025923"/>
+</kw>
+<kw name="Input username" owner="login_page">
+<kw name="Input text" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${locator}</arg>
+<arg>timeout=${5s_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-23T15:04:21.855135" elapsed="0.011320"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-23T15:04:21.866762" level="INFO">Typing text 'tomsmith' into text field 'id=username'.</msg>
+<arg>locator=${locator}</arg>
+<arg>text=${input_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-23T15:04:21.866566" elapsed="0.070735"/>
+</kw>
+<arg>locator=${web_locator['input_username']}</arg>
+<arg>input_text=${username}</arg>
+<status status="PASS" start="2025-08-23T15:04:21.854471" elapsed="0.082938"/>
+</kw>
+<arg>username=${username}</arg>
+<status status="PASS" start="2025-08-23T15:04:21.854142" elapsed="0.083300"/>
+</kw>
+<kw name="Input password" owner="login_page">
+<kw name="Input text" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${locator}</arg>
+<arg>timeout=${5s_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-23T15:04:21.938162" elapsed="0.007951"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-23T15:04:21.946365" level="INFO">Typing text 'SuperSecretPassword!' into text field 'id=password'.</msg>
+<arg>locator=${locator}</arg>
+<arg>text=${input_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-23T15:04:21.946212" elapsed="0.031492"/>
+</kw>
+<arg>locator=${web_locator['input_password']}</arg>
+<arg>input_text=${password}</arg>
+<status status="PASS" start="2025-08-23T15:04:21.937779" elapsed="0.039996"/>
+</kw>
+<arg>password=${password}</arg>
+<status status="PASS" start="2025-08-23T15:04:21.937551" elapsed="0.040254"/>
+</kw>
+<kw name="Click login button" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${web_locator['btn_login']}</arg>
+<arg>timeout=${5s_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-23T15:04:21.978064" elapsed="0.007938"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-23T15:04:21.986372" level="INFO">Clicking element 'xpath=//i[contains(text(), Login)]/parent::button'.</msg>
+<arg>${web_locator['btn_login']}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-23T15:04:21.986090" elapsed="0.805232"/>
+</kw>
+<status status="PASS" start="2025-08-23T15:04:21.977909" elapsed="0.813512"/>
+</kw>
+<arg>username=${VALID_USER}</arg>
+<arg>password=${VALID_PASS}</arg>
+<status status="PASS" start="2025-08-23T15:04:21.827255" elapsed="0.964210"/>
+</kw>
+<kw name="Verify flash popup text" owner="login_page">
+<kw name="Verify text" owner="common">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>locator=${locator}</arg>
+<arg>text=${text_verify}</arg>
+<arg>timeout=${5s_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-08-23T15:04:22.792497" elapsed="0.018886"/>
+</kw>
+<arg>locator=${web_locator['flash_popup']}</arg>
+<arg>text_verify=${verify_text}</arg>
+<status status="PASS" start="2025-08-23T15:04:22.791933" elapsed="0.019528"/>
+</kw>
+<arg>verify_text=${txt_login_into_secure_area}</arg>
+<status status="PASS" start="2025-08-23T15:04:22.791635" elapsed="0.019864"/>
+</kw>
+<kw name="Click logout button" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${web_locator['btn_logout']}</arg>
+<arg>timeout=${5s_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-23T15:04:22.811799" elapsed="0.008497"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-23T15:04:22.820704" level="INFO">Clicking element 'xpath=//i[contains(text(), Logout)]/parent::a'.</msg>
+<arg>${web_locator['btn_logout']}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-23T15:04:22.820388" elapsed="0.688622"/>
+</kw>
+<status status="PASS" start="2025-08-23T15:04:22.811620" elapsed="0.697506"/>
+</kw>
+<kw name="Verify flash popup text" owner="login_page">
+<kw name="Verify text" owner="common">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>locator=${locator}</arg>
+<arg>text=${text_verify}</arg>
+<arg>timeout=${5s_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-08-23T15:04:23.510313" elapsed="0.009283"/>
+</kw>
+<arg>locator=${web_locator['flash_popup']}</arg>
+<arg>text_verify=${verify_text}</arg>
+<status status="PASS" start="2025-08-23T15:04:23.509650" elapsed="0.010022"/>
+</kw>
+<arg>verify_text=${txt_logout_of_secure_area}</arg>
+<status status="PASS" start="2025-08-23T15:04:23.509309" elapsed="0.010403"/>
+</kw>
+<kw name="Close all browser" owner="common">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-08-23T15:04:23.519993" elapsed="0.167349"/>
+</kw>
+<status status="PASS" start="2025-08-23T15:04:23.519825" elapsed="0.167679"/>
+</kw>
+<status status="PASS" start="2025-08-23T15:04:15.375533" elapsed="8.312162"/>
+</test>
+<test id="s1-t2" name="Login failed - Password incorrect" line="13">
+<kw name="Open web url" owner="common">
+<if>
+<branch type="IF" condition="'${headless}' == 'True'">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-23T15:04:23.689165" level="INFO">Opening browser 'headlesschrome' to base url 'http://the-internet.herokuapp.com/login'.</msg>
+<arg>${url}</arg>
+<arg>headlesschrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-23T15:04:23.688981" elapsed="5.567452"/>
+</kw>
+<status status="PASS" start="2025-08-23T15:04:23.688748" elapsed="5.567976"/>
+</branch>
+<branch type="ELSE">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="NOT RUN" start="2025-08-23T15:04:29.257356" elapsed="0.000050"/>
+</kw>
+<status status="NOT RUN" start="2025-08-23T15:04:29.256930" elapsed="0.000536"/>
+</branch>
+<status status="PASS" start="2025-08-23T15:04:23.688724" elapsed="5.568783"/>
+</if>
+<arg>url=${URL}</arg>
+<status status="PASS" start="2025-08-23T15:04:23.688443" elapsed="5.569197"/>
+</kw>
+<kw name="Input username password and click login" owner="login_feature">
+<kw name="Verify if page login page load correctly" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${web_locator['txt_login_page_header']}</arg>
+<arg>timeout=${60s_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-23T15:04:29.258833" elapsed="0.018863"/>
+</kw>
+<status status="PASS" start="2025-08-23T15:04:29.258595" elapsed="0.019199"/>
+</kw>
+<kw name="Input username" owner="login_page">
+<kw name="Input text" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${locator}</arg>
+<arg>timeout=${5s_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-23T15:04:29.278791" elapsed="0.009916"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-23T15:04:29.289037" level="INFO">Typing text 'tomsmith' into text field 'id=username'.</msg>
+<arg>locator=${locator}</arg>
+<arg>text=${input_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-23T15:04:29.288834" elapsed="0.058702"/>
+</kw>
+<arg>locator=${web_locator['input_username']}</arg>
+<arg>input_text=${username}</arg>
+<status status="PASS" start="2025-08-23T15:04:29.278224" elapsed="0.069382"/>
+</kw>
+<arg>username=${username}</arg>
+<status status="PASS" start="2025-08-23T15:04:29.277948" elapsed="0.069688"/>
+</kw>
+<kw name="Input password" owner="login_page">
+<kw name="Input text" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${locator}</arg>
+<arg>timeout=${5s_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-23T15:04:29.348270" elapsed="0.006946"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-23T15:04:29.355443" level="INFO">Typing text 'Password!' into text field 'id=password'.</msg>
+<arg>locator=${locator}</arg>
+<arg>text=${input_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-23T15:04:29.355304" elapsed="0.027420"/>
+</kw>
+<arg>locator=${web_locator['input_password']}</arg>
+<arg>input_text=${password}</arg>
+<status status="PASS" start="2025-08-23T15:04:29.347924" elapsed="0.034854"/>
+</kw>
+<arg>password=${password}</arg>
+<status status="PASS" start="2025-08-23T15:04:29.347740" elapsed="0.035064"/>
+</kw>
+<kw name="Click login button" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${web_locator['btn_login']}</arg>
+<arg>timeout=${5s_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-23T15:04:29.383006" elapsed="0.006638"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-23T15:04:29.389978" level="INFO">Clicking element 'xpath=//i[contains(text(), Login)]/parent::button'.</msg>
+<arg>${web_locator['btn_login']}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-23T15:04:29.389723" elapsed="0.025998"/>
+</kw>
+<status status="PASS" start="2025-08-23T15:04:29.382889" elapsed="0.032896"/>
+</kw>
+<arg>username=${VALID_USER}</arg>
+<arg>password=${INVALID_PASS}</arg>
+<status status="PASS" start="2025-08-23T15:04:29.257994" elapsed="0.157820"/>
+</kw>
+<kw name="Verify flash popup text" owner="login_page">
+<kw name="Verify text" owner="common">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>locator=${locator}</arg>
+<arg>text=${text_verify}</arg>
+<arg>timeout=${5s_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-08-23T15:04:29.416399" elapsed="0.763220"/>
+</kw>
+<arg>locator=${web_locator['flash_popup']}</arg>
+<arg>text_verify=${verify_text}</arg>
+<status status="PASS" start="2025-08-23T15:04:29.416091" elapsed="0.763627"/>
+</kw>
+<arg>verify_text=${txt_pass_invalid}</arg>
+<status status="PASS" start="2025-08-23T15:04:29.415916" elapsed="0.763844"/>
+</kw>
+<kw name="Close all browser" owner="common">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-08-23T15:04:30.180109" elapsed="0.170274"/>
+</kw>
+<status status="PASS" start="2025-08-23T15:04:30.179905" elapsed="0.170650"/>
+</kw>
+<status status="PASS" start="2025-08-23T15:04:23.687993" elapsed="6.662765"/>
+</test>
+<test id="s1-t3" name="Login failed - Username not found" line="19">
+<kw name="Open web url" owner="common">
+<if>
+<branch type="IF" condition="'${headless}' == 'True'">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-23T15:04:30.352200" level="INFO">Opening browser 'headlesschrome' to base url 'http://the-internet.herokuapp.com/login'.</msg>
+<arg>${url}</arg>
+<arg>headlesschrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-23T15:04:30.352026" elapsed="5.120964"/>
+</kw>
+<status status="PASS" start="2025-08-23T15:04:30.351799" elapsed="5.121508"/>
+</branch>
+<branch type="ELSE">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="NOT RUN" start="2025-08-23T15:04:35.473833" elapsed="0.000051"/>
+</kw>
+<status status="NOT RUN" start="2025-08-23T15:04:35.473402" elapsed="0.000544"/>
+</branch>
+<status status="PASS" start="2025-08-23T15:04:30.351775" elapsed="5.122214"/>
+</if>
+<arg>url=${URL}</arg>
+<status status="PASS" start="2025-08-23T15:04:30.351504" elapsed="5.122601"/>
+</kw>
+<kw name="Input username password and click login" owner="login_feature">
+<kw name="Verify if page login page load correctly" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${web_locator['txt_login_page_header']}</arg>
+<arg>timeout=${60s_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-23T15:04:35.475331" elapsed="0.019386"/>
+</kw>
+<status status="PASS" start="2025-08-23T15:04:35.475100" elapsed="0.019715"/>
+</kw>
+<kw name="Input username" owner="login_page">
+<kw name="Input text" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${locator}</arg>
+<arg>timeout=${5s_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-23T15:04:35.495827" elapsed="0.010049"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-23T15:04:35.506226" level="INFO">Typing text 'tomholland' into text field 'id=username'.</msg>
+<arg>locator=${locator}</arg>
+<arg>text=${input_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-23T15:04:35.506000" elapsed="0.058986"/>
+</kw>
+<arg>locator=${web_locator['input_username']}</arg>
+<arg>input_text=${username}</arg>
+<status status="PASS" start="2025-08-23T15:04:35.495265" elapsed="0.069790"/>
+</kw>
+<arg>username=${username}</arg>
+<status status="PASS" start="2025-08-23T15:04:35.494973" elapsed="0.070110"/>
+</kw>
+<kw name="Input password" owner="login_page">
+<kw name="Input text" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${locator}</arg>
+<arg>timeout=${5s_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-23T15:04:35.565702" elapsed="0.007078"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-23T15:04:35.573041" level="INFO">Typing text 'Password!' into text field 'id=password'.</msg>
+<arg>locator=${locator}</arg>
+<arg>text=${input_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-23T15:04:35.572910" elapsed="0.027385"/>
+</kw>
+<arg>locator=${web_locator['input_password']}</arg>
+<arg>input_text=${password}</arg>
+<status status="PASS" start="2025-08-23T15:04:35.565365" elapsed="0.034987"/>
+</kw>
+<arg>password=${password}</arg>
+<status status="PASS" start="2025-08-23T15:04:35.565185" elapsed="0.035192"/>
+</kw>
+<kw name="Click login button" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${web_locator['btn_login']}</arg>
+<arg>timeout=${5s_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-23T15:04:35.600595" elapsed="0.006899"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-23T15:04:35.607834" level="INFO">Clicking element 'xpath=//i[contains(text(), Login)]/parent::button'.</msg>
+<arg>${web_locator['btn_login']}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-23T15:04:35.607575" elapsed="0.026086"/>
+</kw>
+<status status="PASS" start="2025-08-23T15:04:35.600478" elapsed="0.033250"/>
+</kw>
+<arg>username=${INVALID_USER}</arg>
+<arg>password=${INVALID_PASS}</arg>
+<status status="PASS" start="2025-08-23T15:04:35.474488" elapsed="0.159265"/>
+</kw>
+<kw name="Verify flash popup text" owner="login_page">
+<kw name="Verify text" owner="common">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>locator=${locator}</arg>
+<arg>text=${text_verify}</arg>
+<arg>timeout=${5s_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-08-23T15:04:35.634336" elapsed="0.857598"/>
+</kw>
+<arg>locator=${web_locator['flash_popup']}</arg>
+<arg>text_verify=${verify_text}</arg>
+<status status="PASS" start="2025-08-23T15:04:35.634022" elapsed="0.858074"/>
+</kw>
+<arg>verify_text=${txt_user_invalid}</arg>
+<status status="PASS" start="2025-08-23T15:04:35.633851" elapsed="0.858323"/>
+</kw>
+<kw name="Close all browser" owner="common">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-08-23T15:04:36.492799" elapsed="0.085751"/>
+</kw>
+<status status="PASS" start="2025-08-23T15:04:36.492432" elapsed="0.086216"/>
+</kw>
+<status status="PASS" start="2025-08-23T15:04:30.351068" elapsed="6.227701"/>
+</test>
+<status status="PASS" start="2025-08-23T15:04:15.253099" elapsed="21.326146"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test Login" id="s1" pass="3" fail="0" skip="0">Test Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
