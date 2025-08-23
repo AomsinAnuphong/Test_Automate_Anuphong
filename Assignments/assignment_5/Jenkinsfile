@@ -23,7 +23,7 @@ pipeline {
                 sh """
                 ${HOME}/.venv/bin/pip3 install --quiet robotframework
                 ${HOME}/.venv/bin/pip3 install --quiet robotframework-seleniumlibrary
-                npm install -g postman-cli
+                /opt/homebrew/bin/npm install -g postman-cli
                 """
             }
         }
