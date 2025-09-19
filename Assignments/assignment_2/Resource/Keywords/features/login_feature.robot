@@ -1,5 +1,6 @@
 *** Settings ***
-Resource        ../../import.robot
+Resource    ../../import.robot
+
 
 *** Keywords ***
 Input username password and click login

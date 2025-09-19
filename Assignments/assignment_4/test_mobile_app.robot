@@ -1,5 +1,6 @@
 *** Settings ***
-Resource         ./Resource/import.robot
+Resource    ./Resource/import.robot
+
 
 *** Test Cases ***
 TC-001
@@ -22,9 +23,9 @@ TC-002
     new_todo_page.Input todo time    time=${TODO_TIME}
     new_todo_page.Tap set todo
     home_page.Verify landing on home page
-    home_feature.Verify todo name date and time    
-    ...    todo_name=${TODO_NAME}    
-    ...    todo_date=${TODO_DATE_VERIFY}    
+    home_feature.Verify todo name date and time
+    ...    todo_name=${TODO_NAME}
+    ...    todo_date=${TODO_DATE_VERIFY}
     ...    todo_time=${TODO_TIME}
     common_mobile.Close all application
 
@@ -38,7 +39,7 @@ TC-003
     common_mobile.Close all application
 
 TC-004
-    [Documentation]    Add new todo list with  date time in the past 
+    [Documentation]    Add new todo list with date time in the past
     ${past_time}=    common_mobile.Get Time Minus 30 Minutes In AMPM Format
     common_mobile.Open mobile application
     home_page.Verify landing on home page
