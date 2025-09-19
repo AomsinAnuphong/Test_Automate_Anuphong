@@ -3,9 +3,9 @@
     "meta": {
       "collectionId": "25dfb033-1fa8-4818-8033-cf93120e52ed",
       "collectionName": "Test_Automate_API",
-      "started": 1755936255454,
-      "completed": 1755936256308,
-      "duration": 854
+      "started": 1758267133147,
+      "completed": 1758267133833,
+      "duration": 686
     },
     "summary": {
       "iterations": {
@@ -31,17 +31,17 @@
         "skipped": 0
       },
       "timeStats": {
-        "responseAverage": 407.5,
-        "responseMin": 255,
-        "responseMax": 560,
-        "responseStandardDeviation": 152.5
+        "responseAverage": 319.5,
+        "responseMin": 215,
+        "responseMax": 424,
+        "responseStandardDeviation": 104.5
       }
     },
     "executions": [
       {
         "iterationCount": 0,
         "requestExecuted": {
-          "id": "db1c13df-daf2-4368-9dba-6d08aecea8bd",
+          "id": "491ac50e-9823-4c8b-825e-646163109a0a",
           "name": "Get user profile success",
           "url": {
             "protocol": "https",
@@ -79,7 +79,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "422421bf-c2af-41f6-8f88-fca248fe5479",
+              "value": "292c9794-f29f-4124-be70-b4229a7b088a",
               "system": true
             },
             {
@@ -101,7 +101,7 @@
           "method": "GET"
         },
         "response": {
-          "id": "9c586821-7d5b-41e1-9d7f-6ac43d751f48",
+          "id": "e7b6041d-fd16-40f9-a03d-8b6bdf0625d0",
           "_details": {
             "name": "OK",
             "detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action.",
@@ -113,7 +113,7 @@
           "headers": [
             {
               "key": "Date",
-              "value": "Sat, 23 Aug 2025 08:04:15 GMT"
+              "value": "Fri, 19 Sep 2025 07:32:13 GMT"
             },
             {
               "key": "Content-Type",
@@ -132,8 +132,20 @@
               "value": "br"
             },
             {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": "Origin, X-Requested-With, Content-Type, Accept, Authorization, x-api-key"
+            },
+            {
+              "key": "Access-Control-Allow-Methods",
+              "value": "GET, POST, PUT, DELETE, OPTIONS"
+            },
+            {
               "key": "Access-Control-Allow-Origin",
-              "value": "*"
+              "value": "http://localhost:5173"
             },
             {
               "key": "Etag",
@@ -153,11 +165,11 @@
             },
             {
               "key": "Ratelimit-Remaining",
-              "value": "90"
+              "value": "98"
             },
             {
               "key": "Ratelimit-Reset",
-              "value": "4"
+              "value": "60"
             },
             {
               "key": "Referrer-Policy",
@@ -165,11 +177,15 @@
             },
             {
               "key": "Report-To",
-              "value": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=1R6QSkEkCRntUKAaP4PUhNe7WSLzWAHhNetF359q3xQ%3D\\u0026sid=c4c9725f-1ab0-44d8-820f-430df2718e11\\u0026ts=1755929976\"}],\"max_age\":3600}"
+              "value": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=UTnaYIYbzUJ41quy0c5L4LXGgI8mYY%2BzvEEMfcwKklU%3D\\u0026sid=c4c9725f-1ab0-44d8-820f-430df2718e11\\u0026ts=1758264719\"}],\"max_age\":3600}"
             },
             {
               "key": "Reporting-Endpoints",
-              "value": "heroku-nel=\"https://nel.heroku.com/reports?s=1R6QSkEkCRntUKAaP4PUhNe7WSLzWAHhNetF359q3xQ%3D&sid=c4c9725f-1ab0-44d8-820f-430df2718e11&ts=1755929976\""
+              "value": "heroku-nel=\"https://nel.heroku.com/reports?s=UTnaYIYbzUJ41quy0c5L4LXGgI8mYY%2BzvEEMfcwKklU%3D&sid=c4c9725f-1ab0-44d8-820f-430df2718e11&ts=1758264719\""
+            },
+            {
+              "key": "Vary",
+              "value": "Origin, Accept-Encoding"
             },
             {
               "key": "Via",
@@ -185,7 +201,7 @@
             },
             {
               "key": "X-Request-Id",
-              "value": "6dd00bf2-8a78-61cc-b882-81a8d267fb47"
+              "value": "a7e805e4-1e50-48e3-2e59-e54a47252233"
             },
             {
               "key": "X-Xss-Protection",
@@ -193,7 +209,7 @@
             },
             {
               "key": "Age",
-              "value": "6279"
+              "value": "2413"
             },
             {
               "key": "Cache-Control",
@@ -204,20 +220,16 @@
               "value": "HIT"
             },
             {
-              "key": "Vary",
-              "value": "Accept-Encoding"
-            },
-            {
               "key": "Server",
               "value": "cloudflare"
             },
             {
               "key": "CF-RAY",
-              "value": "9739191e5f0e6017-SIN"
+              "value": "9817634f796bce5b-SIN"
             },
             {
               "key": "server-timing",
-              "value": "cfL4;desc=\"?proto=TCP&rtt=54598&min_rtt=46359&rtt_var=17486&sent=4&recv=6&lost=0&retrans=0&sent_bytes=2817&recv_bytes=729&delivery_rate=73094&cwnd=253&unsent_bytes=0&cid=31ed0f76b49ecd54&ts=88&x=0\""
+              "value": "cfL4;desc=\"?proto=TCP&rtt=31260&min_rtt=31184&rtt_var=11846&sent=3&recv=5&lost=0&retrans=0&sent_bytes=2817&recv_bytes=729&delivery_rate=90585&cwnd=247&unsent_bytes=0&cid=78dc188e34e07655&ts=60&x=0\""
             }
           ],
           "stream": {
@@ -568,7 +580,7 @@
             ]
           },
           "cookies": [],
-          "responseTime": 255,
+          "responseTime": 215,
           "responseSize": 342,
           "downloadedBytes": 250
         },
@@ -587,7 +599,7 @@
       {
         "iterationCount": 0,
         "requestExecuted": {
-          "id": "b8ec5c50-5cdf-4e60-b27d-8975303194c2",
+          "id": "b63321d5-f7c5-4fea-ad17-c2c63069a3b4",
           "name": "Get user profile but user not found",
           "url": {
             "protocol": "https",
@@ -625,7 +637,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "c9bda53f-bfef-4857-b587-8e297626460d",
+              "value": "998fdc62-f012-4114-9b2b-4b6c241e1e7b",
               "system": true
             },
             {
@@ -647,7 +659,7 @@
           "method": "GET"
         },
         "response": {
-          "id": "d067efe7-0fb7-4a93-afcd-ff847de54181",
+          "id": "6d828df0-0100-46ab-8c66-f0466daa0d40",
           "_details": {
             "name": "Not Found",
             "detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible.",
@@ -659,7 +671,7 @@
           "headers": [
             {
               "key": "Date",
-              "value": "Sat, 23 Aug 2025 08:04:16 GMT"
+              "value": "Fri, 19 Sep 2025 07:32:13 GMT"
             },
             {
               "key": "Content-Type",
@@ -675,11 +687,23 @@
             },
             {
               "key": "CF-RAY",
-              "value": "9739191effbb6017-SIN"
+              "value": "9817634ffac7ce5b-SIN"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": "Origin, X-Requested-With, Content-Type, Accept, Authorization, x-api-key"
+            },
+            {
+              "key": "Access-Control-Allow-Methods",
+              "value": "GET, POST, PUT, DELETE, OPTIONS"
             },
             {
               "key": "Access-Control-Allow-Origin",
-              "value": "*"
+              "value": "http://localhost:5173"
             },
             {
               "key": "Etag",
@@ -711,11 +735,15 @@
             },
             {
               "key": "Report-To",
-              "value": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=IsgxL6jd52wIX8iqDLy%2FZSJm%2FqMBrHUMti8qhSfikHI%3D\\u0026sid=c4c9725f-1ab0-44d8-820f-430df2718e11\\u0026ts=1755936256\"}],\"max_age\":3600}"
+              "value": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=WdE%2FOauFEPlHhrcjxaR4kYbTT4UpSXy4qQAAzK5EmsM%3D\\u0026sid=c4c9725f-1ab0-44d8-820f-430df2718e11\\u0026ts=1758267133\"}],\"max_age\":3600}"
             },
             {
               "key": "Reporting-Endpoints",
-              "value": "heroku-nel=\"https://nel.heroku.com/reports?s=IsgxL6jd52wIX8iqDLy%2FZSJm%2FqMBrHUMti8qhSfikHI%3D&sid=c4c9725f-1ab0-44d8-820f-430df2718e11&ts=1755936256\""
+              "value": "heroku-nel=\"https://nel.heroku.com/reports?s=WdE%2FOauFEPlHhrcjxaR4kYbTT4UpSXy4qQAAzK5EmsM%3D&sid=c4c9725f-1ab0-44d8-820f-430df2718e11&ts=1758267133\""
+            },
+            {
+              "key": "Vary",
+              "value": "Origin, Accept-Encoding"
             },
             {
               "key": "Via",
@@ -731,7 +759,7 @@
             },
             {
               "key": "X-Request-Id",
-              "value": "4d1461c2-c462-5752-02e3-657ebdf11e87"
+              "value": "32779bfe-efb4-e667-0da7-40576d9f5213"
             },
             {
               "key": "X-Xss-Protection",
@@ -743,11 +771,7 @@
             },
             {
               "key": "cf-cache-status",
-              "value": "EXPIRED"
-            },
-            {
-              "key": "Vary",
-              "value": "Accept-Encoding"
+              "value": "MISS"
             },
             {
               "key": "Server",
@@ -755,7 +779,7 @@
             },
             {
               "key": "server-timing",
-              "value": "cfL4;desc=\"?proto=TCP&rtt=54279&min_rtt=46359&rtt_var=9426&sent=9&recv=10&lost=0&retrans=0&sent_bytes=5017&recv_bytes=1013&delivery_rate=94388&cwnd=257&unsent_bytes=0&cid=31ed0f76b49ecd54&ts=566&x=0\""
+              "value": "cfL4;desc=\"?proto=TCP&rtt=31262&min_rtt=31184&rtt_var=6685&sent=8&recv=8&lost=0&retrans=0&sent_bytes=5257&recv_bytes=1013&delivery_rate=183955&cwnd=251&unsent_bytes=0&cid=78dc188e34e07655&ts=510&x=0\""
             }
           ],
           "stream": {
@@ -766,7 +790,7 @@
             ]
           },
           "cookies": [],
-          "responseTime": 560,
+          "responseTime": 424,
           "responseSize": 2,
           "downloadedBytes": 2
         },
