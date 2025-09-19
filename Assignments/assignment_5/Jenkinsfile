@@ -53,7 +53,9 @@ pipeline {
         stage('Publish Results') {
             steps {
                 echo "Publishing Web Test Results"
-                robot outputDirectory: "${WEB_RESULTS}"
+                robot outputFileName: "${WEB_RESULTS}/output.xml",
+                      reportFileName: "${WEB_RESULTS}/report.html",
+                      logFileName: "${WEB_RESULTS}/log.html"
 
                 echo "Publishing API Test Results (as artifact)"
                 archiveArtifacts artifacts: "${API_RESULTS}/*.json", fingerprint: true
