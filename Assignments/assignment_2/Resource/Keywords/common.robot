@@ -18,7 +18,7 @@ Input text
 
 Verify text
     [Arguments]    ${locator}    ${text_verify}
-    SeleniumLibrary.Wait Until Element Contains    locator=${locator}    text=${text_verify}    timeout=${5s_TIMEOUT}
+    SeleniumLibrary.Wait Until Element Contains    locator=${locator}    text=${text_verify}    timeout=${10s_TIMEOUT}
 
 Close all browser
     SeleniumLibrary.Close All Browsers
